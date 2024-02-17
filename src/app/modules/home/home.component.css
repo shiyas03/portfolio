@@ -1,0 +1,28 @@
+.border-light {
+    border-color: oklch(91% .02 50);
+    border-radius: 40px;
+    border-width: 3px;
+}
+
+.border-dark {
+    border-color: oklch(17.5% .03 320);
+    border-radius: 40px;
+    border-width: 3px;
+}
+
+.border-light:hover,
+.border-dark:hover {
+    border-radius: 0px;
+}
+
+.normal-border-light {
+    border-color: oklch(91% .02 50);
+    border-radius: 30px;
+    border-width: 2px;
+}
+
+.normal-border-dark {
+    border-color: oklch(17.5% .03 320);
+    border-radius: 30px;
+    border-width: 2px;
+}

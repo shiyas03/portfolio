@@ -1,4 +1,6 @@
-<div class="w-full h-screen relative" [class]="isDark?dark:light">
-    <!-- <div class="absolute inset-0 bg-gradient-to-b from-transparent via-50% to-[rgba(255,255,255)] bg-[url(https://grainy-gradients.vercel.app/noise.svg)]"></div> -->
-    <router-outlet></router-outlet>
+<div class="w-full h-screen relative overflow-hidden" >
+    <div class="absolute inset-0" [class]="isDark?dark:light"></div>
+   <div class="absolute inset-0 overflow-y-auto">
+       <router-outlet></router-outlet> 
+   </div>
 </div>

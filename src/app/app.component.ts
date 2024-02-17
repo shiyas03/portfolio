@@ -13,8 +13,6 @@ export class AppComponent {
   dark: string = "bg-gradient-to-b from-[#150d1a] via-[#160c19] via-[#220e1c] via-75% to-[#2c1414]";
 
   constructor(private sharedService: SharedService) {
-    this.sharedService.modeChange.subscribe((mode: boolean) => {
-      mode == true ? this.isDark = true : this.isDark = false
-    })
+    this.sharedService.modeChange.subscribe((mode: boolean) => this.isDark = mode)
   }
 }

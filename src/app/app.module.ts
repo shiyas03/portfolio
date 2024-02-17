@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './modules/home/home.component';
 import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { IconModule } from './lib/icons/icon.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
     BrowserModule,
     AppRoutingModule,
     NavBarComponent,
+    FooterComponent,
+    IconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

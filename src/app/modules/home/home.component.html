@@ -1,2 +1,180 @@
-<app-nav-bar></app-nav-bar>
-<p class="">home works!</p>
+<div class="md:px-20 px-5" [class]="isDark?dark:light">
+    <app-nav-bar></app-nav-bar>
+    <div class="mt-32 mb-28 flex">
+        <p class="text-[30px] sm:text-[100px] lg:text-[150px] xl:text-[200px] font-thin">Hi, I’m Shiyas</p>
+        <p class="ordinal text-xl md:text-2xl lg:text-5xl">👋</p>
+    </div>
+    <div class="w-full h-full md:h-screen md:flex items-center border-b border-black">
+        <div class="md:w-2/5 ps-0 md:p-10">
+            <div class="h-full max-h-[600px] overflow-hidden bg-stone-400 hover:rounded-none"
+                [ngClass]="{ 'border-light': isDark, 'border-dark': !isDark }">
+                <img src="assets/images/image.jpg" alt="" class="w-full brightness-90">
+            </div>
+        </div>
+        <div class="md:w-3/5 p-5 ps-0">
+            <div class="h-full flex flex-col justify-center md:text-5xl">
+                <p class="mt-2">
+                    I’m a <span class="underline mx-2">Full-stack web developer,</span>
+                    Expertise in <span class="underline mx-2">Angular</span> for frontend development and
+                    <span class="underline mx-2">Nodejs</span> for backend solutions.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="h-full border-b border-black md:flex flex-col justify-center md:py-10 py-5">
+        <div>
+            <p class="tracking-widest font-semibold text-lg">Projects</p>
+        </div>
+        <div class="mt-5">
+            <div class="w-full h-fit md:flex mb-10">
+                <div class="md:w-2/5">
+                    <div class="flex md:ms-28">
+                        <a class="tracking-widest text-xl text-center cursor-pointer hover:underline"
+                            (click)="onLinkClick('https://envasion-ai.vercel.app')">EnvasionAi</a>
+                        <p class="rounded-full ms-2 px-3 w-fit flex items-center"
+                            [ngClass]="{ 'normal-border-light': isDark, 'normal-border-dark': !isDark }">
+                            <ng-icon name="heroArrowRight"></ng-icon>
+                        </p>
+                    </div>
+                </div>
+                <div class="md:w-3/5">
+                    <div class="text-2xl">
+                        <p class="font-thin">EnvasionAI is a SaaS platform offering a comprehensive suite of AI-powered
+                            services, including image generation, audio generation, video generation, and chatbot.</p>
+                    </div>
+                    <div [ngClass]="{ 'border-light': isDark, 'border-dark': !isDark }"
+                        class="overflow-hidden my-2 cursor-pointer"
+                        (click)="onLinkClick('https://envasion-ai.vercel.app')">
+                        <img src="assets/images/envasion.png" alt="" class="w-full h-full">
+                    </div>
+                </div>
+            </div>
+            <div class="w-full h-fit md:flex mb-10">
+                <div class="md:w-2/5">
+                    <div class="flex md:ms-28">
+                        <a class="tracking-widest text-xl text-center cursor-pointer hover:underline"
+                            (click)="onLinkClick('https://fitgo-fit.netlify.app')">FitGo</a>
+                        <p class="rounded-full ms-2 px-3 w-fit flex items-center"
+                            [ngClass]="{ 'normal-border-light': isDark, 'normal-border-dark': !isDark }">
+                            <ng-icon name="heroArrowRight"></ng-icon>
+                        </p>
+                    </div>
+                </div>
+                <div class="md:w-3/5">
+                    <div class="text-2xl">
+                        <p class="font-thin">FitGo is a dynamic fitness application designed to empower wellness
+                            journey. It offers a several features, including blogs, customizable workouts, and direct
+                            access to professional trainers.
+                        </p>
+                    </div>
+                    <div [ngClass]="{ 'border-light': isDark, 'border-dark': !isDark }"
+                        class="overflow-hidden my-2 cursor-pointer"
+                        (click)="onLinkClick('https://fitgo-fit.netlify.app')">
+                        <img src="assets/images/fitgo.png" alt="" class="w-full h-full">
+                    </div>
+                </div>
+            </div>
+            <div class="w-full h-fit md:flex mb-10">
+                <div class="md:w-2/5">
+                    <div class="flex md:ms-28">
+                        <a class="tracking-widest text-xl text-center cursor-pointer hover:underline"
+                            (click)="onLinkClick('http://traderow.onrender.com/')">Traderow</a>
+                        <p class="rounded-full ms-2 px-3 w-fit flex items-center"
+                            [ngClass]="{ 'normal-border-light': isDark, 'normal-border-dark': !isDark }">
+                            <ng-icon name="heroArrowRight"></ng-icon>
+                        </p>
+                    </div>
+                </div>
+                <div class="md:w-3/5">
+                    <div class="text-2xl">
+                        <p class="font-thin">Traderow is an e-commerce clothing website created using Node.js and the
+                            EJS template engine, ensuring a seamless and user-friendly shopping experience andn
+                            efficient admin panel for manage products, orders, and customer data.</p>
+                    </div>
+                    <div [ngClass]="{ 'border-light': isDark, 'border-dark': !isDark }"
+                        class="overflow-hidden my-2 cursor-pointer"
+                        (click)="onLinkClick('http://traderow.onrender.com')">
+                        <img src="assets/images/traderow.png" alt="" class="w-full h-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button
+                class="bg-white px-10 md:px-20 py-2 rounded-full drop-shadow-lg flex items-center font-semibold hover:scale-105 transform duration-200"
+                (click)="onMoreClicks()">More Works
+                <ng-icon name="heroArrowRight" class="ms-3"></ng-icon>
+            </button>
+        </div>
+    </div>
+    <div class="h-full md:h-screen border-b border-black md:flex items-center py-5">
+        <div class="md:flex w-full">
+            <div class="md:w-2/5">
+                <div class="">
+                    <p class="tracking-widest font-semibold text-lg">Contact</p>
+                </div>
+            </div>
+            <div class="md:w-2/5">
+                <div class="md:text-3xl">
+                    <p class="font-thin">Let’s get in touch. The best way to contact me is by email: <span
+                            class="underline">shiyastofficial@gmail.com</span></p>
+                    <p class="mt-10">You can also find me on:</p>
+                </div>
+                <div class="md:grid grid-cols-2 gap-2 mt-5">
+                    <div class="border-t border-b border-black p-5">
+                        <div class="flex items-center justify-between text-xl font-thin cursor-pointer">
+                            <div class="flex items-center gap-3">
+                                <img src="assets/images/github.png" alt="" class="w-8" *ngIf="!isDark; else iconBlock">
+                                <ng-template #iconBlock>
+                                    <img src="assets/images/github-white.png" alt="" class="w-8">
+                                </ng-template>
+                                <p>GitHub</p>
+                            </div>
+                            <ng-icon name="heroArrowUpRight" class="-mt-1"></ng-icon>
+                        </div>
+                        <div class="text-lg mt-1">
+                            <p>@shiyas03</p>
+                        </div>
+                    </div>
+                    <div class="border-t border-b border-black p-5">
+                        <div class="flex items-center justify-between text-xl font-thin cursor-pointer">
+                            <div class="flex items-center gap-3">
+                                <img src="assets/images/linkedin.png" alt="" class="w-6">
+                                <p>LinkedIn</p>
+                            </div>
+                            <ng-icon name="heroArrowUpRight" class="-mt-1"></ng-icon>
+                        </div>
+                        <div class="text-lg mt-1">
+                            <p>@shiyas03</p>
+                        </div>
+                    </div>
+                    <div class="border-t border-b border-black p-5">
+                        <div class="flex items-center justify-between text-xl font-thin cursor-pointer">
+                            <div class="flex items-center gap-3">
+                                <img src="assets/images/instagram.png" alt="" class="w-8">
+                                <p>Instagram</p>
+                            </div>
+                            <ng-icon name="heroArrowUpRight" class="-mt-1"></ng-icon>
+                        </div>
+                        <div class="text-lg mt-1">
+                            <p>@shiyas.t_</p>
+                        </div>
+                    </div>
+                    <div class="border-t border-b border-black p-5">
+                        <div class="flex items-center justify-between text-xl font-thin cursor-pointer">
+                            <div class="flex items-center gap-3">
+                                <img src="assets/images/twitter.png" alt="" class="w-5">
+                                <p>Twitter</p>
+                            </div>
+                            <ng-icon name="heroArrowUpRight" class="-mt-1"></ng-icon>
+                        </div>
+                        <div class="text-lg mt-1">
+                            <p>@shiyas03</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

@@ -1,15 +1,15 @@
-<div class="w-full h-14 flex justify-between items-center px-20" [class]="isDark?dark:light">
+<div class="w-full h-14 flex md:justify-between items-center md:px-20" [class]="isDark?dark:light">
     <div class="text-center">
-        <p class="cursor-pointer">shiyas.me</p>
+        <button class="cursor-pointer tracking-widest border hover:border-black px-4 py-1 rounded-full">shiyas.me</button>
     </div>
-    <div class="flex gap-20">
+    <div class="flex md:gap-20">
         <button
-            class="hover:bg-white px-5 h-12 rounded-full drop-shadow-lg flex items-center gap-1 hover:text-black focus:text-black focus:bg-white">
+            class="hover:bg-white px-5 h-12 rounded-full drop-shadow-lg tracking-wide flex items-center gap-1 hover:text-[#150d1a] focus:text-[#150d1a] focus:bg-white">
             menu
             <ng-icon name="heroChevronDown" class=""></ng-icon>
         </button>
         <button
-            class="hover:bg-white px-4 h-12 rounded-full drop-shadow-lg flex items-center gap-1 hover:text-black focus:text-black focus:bg-white"
+            class="hover:bg-white px-4 h-12 rounded-full drop-shadow-lg flex items-center gap-1 hover:text-[#150d1a] focus:text-[#150d1a] focus:bg-white"
             (click)="onModeClicks()">
             <ng-icon [name]="isDark?'heroMoon':'heroSun'" class="text-xl"></ng-icon>
         </button>
