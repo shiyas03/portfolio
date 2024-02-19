@@ -1,20 +1,21 @@
+<app-nav-bar></app-nav-bar>
 <div class="md:px-20 px-5" [class]="isDark?dark:light">
-    <app-nav-bar></app-nav-bar>
     <div class="mt-32 mb-28 flex">
-        <p class="text-[30px] sm:text-[100px] lg:text-[150px] xl:text-[200px] font-thin">Hi, I’m Shiyas</p>
-        <p class="ordinal text-xl md:text-2xl lg:text-5xl">👋</p>
+        <p class="text-[30px] sm:text-[100px] lg:text-[150px] xl:text-[200px] font-thin" @opacityTrigger>Hi, I’m Shiyas
+        </p>
+        <p class="ordinal text-xl md:text-2xl lg:text-5xl wave">👋</p>
     </div>
-    <div class="w-full h-full md:h-screen md:flex items-center border-b border-black">
+    <div class="w-full h-full min-h-screen md:flex border-b border-black" @bottomTopTrigger>
         <div class="md:w-2/5 ps-0 md:p-10">
-            <div class="h-full max-h-[600px] overflow-hidden bg-stone-400 hover:rounded-none"
+            <div class="h-fit max-h-[600px] overflow-hidden bg-stone-400 hover:rounded-none"
                 [ngClass]="{ 'border-light': isDark, 'border-dark': !isDark }">
                 <img src="assets/images/image.jpg" alt="" class="w-full brightness-90">
             </div>
         </div>
-        <div class="md:w-3/5 p-5 ps-0">
-            <div class="h-full flex flex-col justify-center md:text-5xl">
+        <div class="md:w-3/5 py-10 ps-0">
+            <div class="h-full md:text-5xl flex items-center">
                 <p class="mt-2">
-                    I’m a <span class="underline mx-2">Full-stack web developer,</span>
+                    I’m a self-taught <span class="underline mx-2">Full-stack web developer,</span>
                     Expertise in <span class="underline mx-2">Angular</span> for frontend development and
                     <span class="underline mx-2">Nodejs</span> for backend solutions.
                 </p>
@@ -43,9 +44,16 @@
                             services, including image generation, audio generation, video generation, and chatbot.</p>
                     </div>
                     <div [ngClass]="{ 'border-light': isDark, 'border-dark': !isDark }"
-                        class="overflow-hidden my-2 cursor-pointer"
-                        (click)="onLinkClick('https://envasion-ai.vercel.app')">
-                        <img src="assets/images/envasion.png" alt="" class="w-full h-full">
+                        class="overflow-hidden my-2 duration-300 hover:scale-105 block relative"
+                        (click)="onLinkClick('https://envasion-ai.vercel.app')" (mouseenter)="envasionPreview = true"
+                        (mouseleave)="envasionPreview = false">
+                        <img src="assets/images/envasion.png" alt="" class="w-full h-full hover:blur-sm">
+                        <a (click)="onLinkClick('https://envasion-ai.vercel.app')"
+                            class="absolute top-[45%] left-[45%] text-black rounded-full flex items-center justify-between hover:bg-white hover:text-black px-4 py-2 cursor-pointer"
+                            *ngIf="envasionPreview">
+                            <span class="span tracking-wide">preview</span>
+                            <ng-icon name="heroArrowUpRight" class="mx-1"></ng-icon>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -68,9 +76,16 @@
                         </p>
                     </div>
                     <div [ngClass]="{ 'border-light': isDark, 'border-dark': !isDark }"
-                        class="overflow-hidden my-2 cursor-pointer"
-                        (click)="onLinkClick('https://fitgo-fit.netlify.app')">
-                        <img src="assets/images/fitgo.png" alt="" class="w-full h-full">
+                        class="overflow-hidden my-2 duration-300 hover:scale-105 relative block"
+                        (click)="onLinkClick('https://fitgo-fit.netlify.app')" (mouseenter)="fitgoPreview = true"
+                        (mouseleave)="fitgoPreview = false">
+                        <img src="assets/images/fitgo.png" alt="" class="w-full h-full hover:blur-sm">
+                        <a (click)="onLinkClick('https://fitgo-fit.netlify.app')"
+                            class="absolute top-[45%] left-[45%] text-white rounded-full flex items-center justify-between hover:bg-white hover:text-black px-4 py-2 cursor-pointer"
+                            *ngIf="fitgoPreview">
+                            <span class="tracking-wide">preview</span>
+                            <ng-icon name="heroArrowUpRight" class="mx-1"></ng-icon>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -92,9 +107,16 @@
                             efficient admin panel for manage products, orders, and customer data.</p>
                     </div>
                     <div [ngClass]="{ 'border-light': isDark, 'border-dark': !isDark }"
-                        class="overflow-hidden my-2 cursor-pointer"
-                        (click)="onLinkClick('http://traderow.onrender.com')">
-                        <img src="assets/images/traderow.png" alt="" class="w-full h-full">
+                        class="overflow-hidden my-2 relative block"
+                        (click)="onLinkClick('http://traderow.onrender.com')" (mouseenter)="traderowPreview = true"
+                        (mouseleave)="traderowPreview = false">
+                        <img src="assets/images/traderow.png" alt="" class="w-full h-full hover:blur-sm">
+                        <a (click)="onLinkClick('http://traderow.onrender.com')"
+                            class="absolute top-[45%] left-[45%] text-white rounded-full flex items-center justify-between hover:bg-white hover:text-black px-4 py-2 cursor-pointer"
+                            *ngIf="traderowPreview">
+                            <span class="tracking-wide">preview</span>
+                            <ng-icon name="heroArrowUpRight" class="mx-1"></ng-icon>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -102,7 +124,7 @@
         <div>
             <button
                 class="bg-white px-10 md:px-20 py-2 rounded-full drop-shadow-lg flex items-center font-semibold hover:scale-105 transform duration-200"
-                (click)="onMoreClicks()">More Works
+                (click)="onLinkClick('https://github.com/shiyas03')">More Works
                 <ng-icon name="heroArrowRight" class="ms-3"></ng-icon>
             </button>
         </div>

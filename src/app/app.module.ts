@@ -7,6 +7,7 @@ import { HomeComponent } from './modules/home/home.component';
 import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { IconModule } from './lib/icons/icon.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { IconModule } from './lib/icons/icon.module';
     AppRoutingModule,
     NavBarComponent,
     FooterComponent,
-    IconModule
+    IconModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

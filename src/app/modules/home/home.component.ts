@@ -1,11 +1,12 @@
-import { Component, EventEmitter, Output, ɵsetAlternateWeakRefImpl } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, HostListener, } from '@angular/core';
+import { bottonToState, letfRightState, opacityState, rightLeftState, topToBottonState } from 'src/app/shared/animations/animation';
 import { SharedService } from 'src/app/shared/services/shared.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  animations: [opacityState, topToBottonState, bottonToState]
 })
 export class HomeComponent {
 
@@ -13,7 +14,11 @@ export class HomeComponent {
   light: string = 'text-[#220e1c]';
   dark: string = 'text-stone-400'
 
-  constructor(private sharedService: SharedService, private router: Router) {
+  envasionPreview: boolean = false;
+  fitgoPreview: boolean = false;
+  traderowPreview: boolean = false
+
+  constructor(private sharedService: SharedService) {
     this.sharedService.modeChange.subscribe(mode => this.isDark = mode)
   }
 
@@ -21,8 +26,8 @@ export class HomeComponent {
     window.open(link)
   }
 
-  onMoreClicks(){
-    window.open('https://github.com/shiyas03')
+  scrollToTop() {
+    window.scroll(0, 0);
   }
 
 }

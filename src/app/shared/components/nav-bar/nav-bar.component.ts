@@ -1,27 +1,33 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
-import { NgIconsModule } from '@ng-icons/core';
-import { heroSun } from '@ng-icons/heroicons/outline'
+import { Component, HostListener } from '@angular/core';
 import { IconModule } from 'src/app/lib/icons/icon.module';
 import { SharedService } from '../../services/shared.service';
+import { topToBottonState } from '../../animations/animation';
 
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css'],
   standalone: true,
-  imports: [CommonModule, IconModule]
+  imports: [CommonModule, IconModule],
+  animations:[topToBottonState]
 })
 export class NavBarComponent {
 
   isDark: boolean = false
-  light: string = 'text-black'
-  dark: string = 'text-white'
+  light: string = 'text-black bg-[#DBE6F2]'
+  dark: string = 'text-white bg-[#150d1a]'
 
   constructor(private sharedService: SharedService) { }
   onModeClicks() {
     this.isDark = !this.isDark
     this.sharedService.onModeChange(this.isDark)
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: any) {
+    console.log('working');
+
   }
 
 }

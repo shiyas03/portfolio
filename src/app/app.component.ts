@@ -1,4 +1,4 @@
-import { Component, OnChanges, SimpleChanges } from '@angular/core';
+import { Component } from '@angular/core';
 import { SharedService } from './shared/services/shared.service';
 
 @Component({
@@ -7,6 +7,7 @@ import { SharedService } from './shared/services/shared.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'portfolio';
   isDark: boolean = false;
   light: string = "bg-gradient-to-b from-[#DBE6F2] via-[#DCEAF4] via-[#EEF7F8] via-75% to-[#FFE0D4]";
