@@ -8,7 +8,6 @@ import { SharedService } from './shared/services/shared.service';
 })
 export class AppComponent {
 
-  title = 'portfolio';
   isDark: boolean = false;
   light: string = "bg-gradient-to-b from-[#DBE6F2] via-[#DCEAF4] via-[#EEF7F8] via-75% to-[#FFE0D4]";
   dark: string = "bg-gradient-to-b from-[#150d1a] via-[#160c19] via-[#220e1c] via-75% to-[#2c1414]";
